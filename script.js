@@ -4,8 +4,20 @@
 
 var btn = document.getElementById('button');
 var burger = document.getElementById('name');
-var ingredients = document.getElementsByClassName('ingredient-checkbox')
-console.log(ingredients)
+var ingredients = document.getElementsByClassName('ingredient-checkbox');
+var finalPrice = document.getElementById('price');
+
+
+
+/**
+ * CREAZIONE DISCOUNT
+ */
+
+
+
+
+
+
 
 
 
@@ -19,7 +31,6 @@ btn.addEventListener('click',
 
         var user = burger.value.toLowerCase().trim();
 
-        console.log(user)
  
         if ( user.length == 0 ){
             alert('Inserisci il nome del tuo burger');
@@ -31,15 +42,18 @@ btn.addEventListener('click',
             for ( var i = 0; i < ingredients.length; i++ ){
 
                  var ingredientCheck = ingredients[i];
-//                 console.log(ingredientCheck)
 
                  if ( ingredientCheck.checked === true ){
 
                     price += parseInt(ingredientCheck.value);
-                    console.log(price)
+                    
 
                  }
+
+                 finalPrice.innerHTML = price.toFixed(2);
             }
 
         }
+
+        
 })
