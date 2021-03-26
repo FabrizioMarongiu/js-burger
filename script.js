@@ -6,12 +6,7 @@ var btn = document.getElementById('button');
 var burger = document.getElementById('name');
 var ingredients = document.getElementsByClassName('ingredient-checkbox');
 var finalPrice = document.getElementById('price');
-
-
-
-/**
- * CREAZIONE DISCOUNT
- */
+var discount = document.getElementById('coupon');
 
 
 
@@ -50,8 +45,24 @@ btn.addEventListener('click',
 
                  }
 
-                 finalPrice.innerHTML = price.toFixed(2);
+                 
             }
+
+            /**
+            * CREAZIONE DISCOUNT
+            */
+            var discountCode = discount.value; 
+
+            var discount20 = [ 'ab12', 'bc13', 'cd14', 'de15' ];
+
+
+            if(discount20.includes(discountCode)){
+               price -= price * 0.2;
+
+           
+            }
+            
+            finalPrice.innerHTML = price.toFixed(2);
 
         }
 
